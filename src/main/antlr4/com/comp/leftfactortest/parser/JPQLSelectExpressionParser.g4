@@ -1,6 +1,8 @@
-grammar JPQLSelectExpression;
+parser grammar JPQLSelectExpressionParser;
 
-import JPQL_lexer;
+options {
+	tokenVocab = JPQLSelectExpressionLexer;
+}
 
 @parser::members {
 private boolean allowOuter = false;
