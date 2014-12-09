@@ -75,7 +75,7 @@ key_value_expression : name=KEY '('collection_valued_path_expression')'
                  ;
 
  state_field_path_expression : path
-                             | {allowOuter == true}? outer_expression
+                             | {allowOuter}? outer_expression
                              ;
 
   path : general_subpath'.'general_path_element
@@ -203,8 +203,8 @@ key_value_expression : name=KEY '('collection_valued_path_expression')'
 
  case_expression : coalesce_expression
                  | nullif_expression
-                 | {allowCaseWhen == true}? general_case_expression     //for entity view extension only
-                 | {allowCaseWhen == true}? simple_case_expression     //for entity view extension only
+                 | {allowCaseWhen}? general_case_expression     //for entity view extension only
+                 | {allowCaseWhen}? simple_case_expression     //for entity view extension only
                  ;
 
 coalesce_expression : COALESCE '('scalar_expression (',' scalar_expression)+')'
