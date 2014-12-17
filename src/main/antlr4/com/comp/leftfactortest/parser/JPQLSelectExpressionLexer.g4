@@ -1,4 +1,4 @@
-lexer grammar JPQL_lexer;
+lexer grammar JPQLSelectExpressionLexer;
  
 KEY: [Kk][Ee][Yy];
 
@@ -134,6 +134,20 @@ Path_separator
      : '.'
      ;
  
+LeftParen : '(';
+RightParen : ')';
+Comma : ',';
+Plus : '+';
+Minus : '-';
+Div : '/';
+LeftBracket : '[';
+RightBracket : ']';
+Equals : '=';
+Greater : '>';
+GreaterEqual : '>=';
+Less : '<';
+LessEqual : '<=';
+
 WS: [ \n\t\r]+ -> channel(HIDDEN);
  
 Identifier
